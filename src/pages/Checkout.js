@@ -12,7 +12,7 @@ import {
 } from "react-stripe-elements";
 
 function Checkout(props) {
-  const { cart, total, clearCart } = React.useContext(CartContext);
+  const { cart, total } = React.useContext(CartContext);
   const { showAlert, hideAlert, alert } = React.useContext(UserContext);
 
   const [name, setName] = React.useState("");

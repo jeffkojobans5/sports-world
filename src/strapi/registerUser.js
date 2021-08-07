@@ -2,7 +2,7 @@ import axios from "axios";
   
 async function registerUser({ email, password, username }) {
   const response = await axios
-    .post(`http://localhost:1337/auth/local/register`, {
+    .post(`https://gentle-lowlands-73749.herokuapp.com/auth/local/register`, {
       username,
       email,
       password

@@ -289,6 +289,10 @@ Product List
   row-gap: 1.8rem;
   /* align-items: start; */
 }
+.products-center p {
+  width: 100%;
+  text-align: center;
+}
 .product {
   background: var(--mainWhite);
   margin-bottom: 2rem;

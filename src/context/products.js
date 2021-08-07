@@ -17,7 +17,7 @@ export default function ProductProvider({children}){
   const [sorted, setSorted ] = React.useState([])
   const [filters, setFilters ] = React.useState({
     search : "",
-    catergory : "all",
+    category : "",
     shipping: false,
     price : "all"
   })
@@ -62,11 +62,17 @@ export default function ProductProvider({children}){
     const { search, category, shipping, price } = filters;
 
     if(category !== "all"){
-       newProducts = newProducts.filter(item => item.category === category);
+       newProducts = newProducts.filter(item => {
+        let title = item.title.toLowerCase().trim();
+        return title.includes(category) ? item : null;
+      });       
     }
 
     if (shipping !== false) {
-      newProducts = newProducts.filter(item => item.free_shipping === shipping);
+      newProducts = newProducts.filter(item => {
+        let title = item.title.toLowerCase().trim();
+        return title.includes('ball') ? item : null;
+      });
     }
 
     if (price !== "all") {

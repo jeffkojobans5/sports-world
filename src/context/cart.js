@@ -42,12 +42,17 @@ function CartProvider({ children }) {
     setCart(newCart)
   }
 
-  const decreaseAmount = id => {
+  const decreaseAmount = (id , amount) => {
+    if(+amount === 1) {  
+      console.log(true)
+      return setCart([...cart].filter(item => item.id !== id))
+    }
     const newCart = [...cart].map(item => {
-      return item.id === id
+      return item.id === id 
       ? { ...item, amount: item.amount - 1 }
       : { ...item };
     });
+
     setCart(newCart)    
   }
 

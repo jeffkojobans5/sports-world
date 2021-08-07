@@ -1,8 +1,9 @@
+
 import React, { useContext } from "react";
 import { ProductContext } from "../../context/products";
 export default function Filters() {
   const {
-    filters: { search, category, shipping, price },
+    filters: { search, shipping, price },
     updateFilters,
     sorted
   } = useContext(ProductContext);
@@ -14,7 +15,7 @@ export default function Filters() {
         <div>
           {/* search input */}
           <div className="form-group">
-            <label htmlFor="search">search term</label>
+            <label htmlFor="search">search product</label>
             <input
               type="text"
               name="search"
@@ -27,21 +28,7 @@ export default function Filters() {
 
           {/* end of search form */}
           {/* select category */}
-          <div className="form-group">
-            <label htmlFor="category">category</label>
-            <select
-              name="category"
-              id="category"
-              className="form-control"
-              value={category}
-              onChange={updateFilters}
-            >
-              <option value="all">all</option>
-              <option value="phone">phone</option>
-              <option value="computer">computer</option>
-              <option value="radio">radio</option>
-            </select>
-          </div>
+
           {/* end of category */}
           {/* free shipping */}
           <div className="form-group">
