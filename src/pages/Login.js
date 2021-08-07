@@ -17,7 +17,7 @@ export default function Login() {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [username, setUsername] = React.useState("");
-  const [isMember, setIsMember] = React.useState(true);
+  const [isMember, setIsMember] = React.useState(false);
 
   let isEmpty = !email || !password || !username || alert.show 
 
